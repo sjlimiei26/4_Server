@@ -1,8 +1,13 @@
 # eclipse
 .metadata
 .settings
-bin
 .classpath
 .project
 
+# tomcat
 Servers
+
+# java
+bin
+build
+*.class
