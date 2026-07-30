@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+</head>
+<body>
+	<h1>회원 가입 페이지</h1>
+	
+	<!-- 
+		* form 태그 : 서버로 데이터를 전달해주는 HTML 태그
+	
+		  - action : 어떤 주소로(URL) 요청을 보낼 것인지 설정
+		  			 상대경로 ("join") -- @WebServlet("/join") 서블릿이 처리해줌!
+		  - method : 요청 방식 지정
+		  			"post" : 데이터를 요청 본문(body)에 담아 전송. URL에 노출되지 않음.
+		  			"get"  : 데이터를 URL 쿼리 파라미터로 전송. URL에 노출됨.
+		  			
+		 * input, select, textarea, .. : 사용자로부터 데이터를 입력받을 수 있는 HTML 태그
+		 
+		   - name : 서버로 데이터를 전송 시 식별자 값을 저장하는 속성 (key)
+		   		    이 속성을 설정하지 않으면, 서버로 전달되지 않음!!
+	 -->
+	 <form action="join" method="post">
+	 	이름: <input type="text" name="name" placeholder="이름을 작성하세요..."> <br>
+	 	이메일: <input type="text" name="email" placeholder="이메일을 작성하세요..."> <br>
+	 	
+	 	<button>제출</button>
+	 </form>
+</body>
+</html>
+
+
+
