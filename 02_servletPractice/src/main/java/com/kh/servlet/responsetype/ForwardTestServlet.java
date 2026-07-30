@@ -14,7 +14,7 @@ import java.io.IOException;
  *   - 따라서 브라우저의 URL 주소창은 변경되지 않음.
  *   
  * * request.setAttribute(key, value)
- *   - request 객체에 데이터를 담아두면, forward로 이동한 페이지(자원)에서도 그 데이터를 사용할 수 있음
+ *   - request 객체에 데이터를 담아두면, forward 로 이동한 페이지(자원)에서도 그 데이터를 사용할 수 있음
  *   - 단, 같은 요청 안에서만 데이터가 유지됨. (요청이 새로 들어오면 데이터는 사라짐)
  *   
  * * 처리 위치 : 서버 내부
@@ -26,28 +26,23 @@ import java.io.IOException;
 public class ForwardTestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ForwardTestServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * * request 객체에 임의의 데이터를 저장 후
+	 * 		result.jsp 페이지로 포워딩(forward)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// * request 객체에 데이터 저장
+		//			request.setAttribute(키값, 저장할데이터)
+		request.setAttribute("message", "서블릿에서 저장한 데이터 @@");
+		
+		// * result.jsp 페이지로 포워딩
+		//			request.getRequestDispatcher(경로) => 지정한 자원(경로)으로 요청을 넘길 준비
+		//			.forward(request, response)      => 실제로 request, response 객체를 그대로 해당 자원에게 전달
+		request.getRequestDispatcher("/result.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
 
 }
+
+
+
