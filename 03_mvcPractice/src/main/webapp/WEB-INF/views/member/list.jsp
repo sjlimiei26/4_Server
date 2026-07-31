@@ -19,6 +19,7 @@
 				<th>이름</th>
 				<th>이메일</th>
 				<th>나이</th>
+				<th>삭제</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,6 +34,14 @@
 				<td><%= m.getName() %></td>
 				<td><%= m.getEmail() %></td>
 				<td><%= m.getAge() %></td>
+				<%-- 
+					TODO: 삭제 기능 
+						- 요청 주소: /member/delete
+						- 요청 파라미터: id=회원번호
+				--%>
+				<td>
+					<a href="#">삭제</a>
+				</td>
 			</tr>
 			
 			<%
