@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원 등록 페이지</h1>
+	<!-- 
+		* 현재 파일은 WEB-INF 폴더 밖에 위치하고 있음
+		  따라서, 브라우저에서 URL로 직접 접근이 가능함!
+	 -->
+	 <form action="/mvc/member/insert" method="post">
+	 	<!--  
+ 			* 이름, 이메일, 나이를 입력받아
+ 			  요청 주소(/mvc/member/insert)로 전송
+ 			  요청 방식(post)	 	
+	 	-->
+	 	<label>
+	 	이름: <input type="text" name="name" required>	 	
+	 	</label> <br>
+	 	
+	 	<label>
+	 	이메일: <input type="email" name="email" required>
+	 	</label> <br>
+	 	
+	 	<label>
+	 	나이: <input type="number" name="age" required>
+	 	</label> <br>
+	 	
+	 	<input type="submit" value="등록" />
+	 </form>
+	 
+</body>
+</html>
+
+
+
+
+
