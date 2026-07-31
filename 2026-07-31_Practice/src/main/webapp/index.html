@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Servlet 주요 기능 복습 페이지</title>
+</head>
+
+<body>
+    <h1>Servlet 복습 테스트</h1>
+
+    <h2>요청 파라미터 테스트 (GET / POST)</h2>
+    <!-- TODO: 전달된 검색어 데이터를 추출하여 응답 처리하세요. -->
+    <!-- [응답 출력 형식] <h2>검색 결과: [검색어]</h2> -->
+    <form action="/practice/getTest" method="GET">
+        <label>검색어 (GET): <input type="text" name="keyword"></label>
+        <button type="submit">GET 요청</button>
+    </form>
+    <br>
+    <!-- TODO: 요청 한글 인코딩 설정 후 전달된 아이디와 비밀번호를 추출하여 응답 처리하세요. -->
+    <!-- [응답 출력 형식] <h2>로그인 입력 값: [아이디]</h2> -->
+    <form action="/practice/postTest" method="POST">
+        <label>아이디 (POST): <input type="text" name="userId"></label>
+        <label>비밀번호 (POST): <input type="password" name="userPw"></label>
+        <button type="submit">POST 요청</button>
+    </form>
+
+    <h2>페이지 이동 테스트 (Forward / Redirect)</h2>
+    <ul>
+        <!-- TODO: 요청 객체에 임의의 데이터를 저장(setAttribute)한 후 서버 내부에서 이동 처리하세요. -->
+    <!-- [응답 출력 형식] <h2>Forward 이동 성공: [저장한 데이터]</h2> -->
+        <li><a href="/practice/forwardTest">Forward 이동 (URL 유지, 요청 데이터 유지)</a></li>
+    <!-- TODO: 요청을 받아 새로운 URL(/practice/result)로 이동하도록 처리하십시오. -->
+    <!-- [응답 출력 형식] <h2>Redirect 이동 성공</h2> -->
+        <li><a href="/practice/redirectTest">Redirect 이동 (URL 변경, 새로운 요청 발생)</a></li>
+    </ul>
+
+    <h2>상태 유지 테스트 (Session)</h2>
+    <!-- TODO: 입력된 닉네임과 연락처를 세션 영역(HttpSession)에 저장 하세요. -->
+    <!-- [응답 출력 형식] <h2>세션 정보 저장 완료</h2> -->
+    <form action="/practice/sessionSave" method="POST">
+        <label>닉네임: <input type="text" name="nickname"></label>
+        <label>연락처: <input type="text" name="tel"></label>
+        <button type="submit">세션 저장</button>
+    </form>
+    <br>
+    <!-- TODO: 세션 객체에서 저장된 닉네임과 연락처를 추출하여 출력 하세요. -->
+    <!-- [응답 출력 형식] <h2>마이페이지 - 닉네임: [닉네임], 연락처: [연락처]</h2> -->
+    <ul>
+        <li><a href="/practice/myPage">마이페이지 (세션 정보 확인)</a></li>
+    </ul>
+</body>
+
+</html>
