@@ -100,6 +100,35 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	/*
+	 *  회원 삭제 메소드 (데이터 삭제)
+	 */
+	public void deleteById(int id) {
+		// 실행할 쿼리문 => 데이터 추가 (DML, INSERT)
+		String sql = "DELETE FROM MEMBER WHERE ID = ?";
+		
+		// Connection 객체 생성 후
+		//		PreparedStatement 객체 생성
+		try ( Connection conn = DBUtil.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql); ) {
+			
+			// sql 문 완성하기. (? 위치에 사용할 데이터 적용)
+			pstmt.setInt(1, id);
+			
+			// 실행 및 결과 반환
+			int result = pstmt.executeUpdate();
+			
+			if (result > 0) {
+				System.out.println(result + "행이 삭제됨. (id: " + id + ")");
+			} else {
+				System.out.println("삭제된 행이 없음.");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
 
 
