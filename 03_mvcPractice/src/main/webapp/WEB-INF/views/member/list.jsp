@@ -40,7 +40,7 @@
 						- 요청 파라미터: id=회원번호
 				--%>
 				<td>
-					<a href="#">삭제</a>
+					<a href="/mvc/member/delete?id=<%= m.getId() %>">삭제</a>
 				</td>
 			</tr>
 			
