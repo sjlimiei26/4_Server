@@ -60,6 +60,8 @@
 	 	empty 연산 (리스트에 값이 비어있는지 확인) : ${ empty list }
 	 	<%-- 해당 리스트가 비어있거나 null 인 경우 true 반환 --%>
 	 </p>
+	 
+	 <a href="/jsp">첫 페이지로 이동...</a>
 </body>
 </html>
 
