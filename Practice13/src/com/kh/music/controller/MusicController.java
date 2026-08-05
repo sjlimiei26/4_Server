@@ -10,17 +10,20 @@ import java.util.Collections;
 import java.util.List;
 
 import com.kh.music.model.compare.AscTitle;
+import com.kh.music.model.dao.MusicDAO;
 import com.kh.music.model.vo.Music;
 
 public class MusicController {
 	private List<Music> list = new ArrayList<>(); // []
+	private MusicDAO dao = new MusicDAO();
 	
 	private final String FILE_NAME = "musiclist.txt";
 	
 	public MusicController() {
 		// 프로그램이 처음 실행되었을 때 (현재 객체가 생성되었을 때)
 		// 파일에 저장된 내용을 읽어와서 리스트에 추가
-		fileLoad();
+		// fileLoad();
+		list = dao.findAll();
 		
 	}
 
