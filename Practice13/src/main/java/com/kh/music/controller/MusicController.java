@@ -22,8 +22,8 @@ public class MusicController {
 	public MusicController() {
 		// 프로그램이 처음 실행되었을 때 (현재 객체가 생성되었을 때)
 		// 파일에 저장된 내용을 읽어와서 리스트에 추가
-		// fileLoad();
-		list = dao.findAll();
+		fileLoad();
+		//list = dao.findAll();
 		
 	}
 

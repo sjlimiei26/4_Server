@@ -14,8 +14,8 @@ import com.kh.music.util.DBUtil;
 public class MusicDAO {
 	
 	// 곡 목록 조회
-	public List<Music> findAll() {
-		List<Music> list = new ArrayList<>();
+	public List<MusicDTO> findAll() {
+		List<MusicDTO> list = new ArrayList<>();
 		String sql = "SELECT * FROM MUSIC";
 		
 		try (Connection conn = DBUtil.getConnection();
