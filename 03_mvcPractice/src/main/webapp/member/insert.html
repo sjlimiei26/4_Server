@@ -2,35 +2,44 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 관리</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-	<h1>회원 등록 페이지</h1>
-	<!-- 
-		* 현재 파일은 WEB-INF 폴더 밖에 위치하고 있음
-		  따라서, 브라우저에서 URL로 직접 접근이 가능함!
-	 -->
-	 <form action="/mvc/member/insert" method="post">
-	 	<!--  
- 			* 이름, 이메일, 나이를 입력받아
- 			  요청 주소(/mvc/member/insert)로 전송
- 			  요청 방식(post)	 	
-	 	-->
-	 	<label>
-	 	이름: <input type="text" name="name" required>	 	
-	 	</label> <br>
-	 	
-	 	<label>
-	 	이메일: <input type="email" name="email" required>
-	 	</label> <br>
-	 	
-	 	<label>
-	 	나이: <input type="number" name="age" required>
-	 	</label> <br>
-	 	
-	 	<input type="submit" value="등록" />
-	 </form>
-	 
+	<div class="container mt-5">
+		<h1>회원 등록 페이지</h1>
+		<!-- 
+			* 현재 파일은 WEB-INF 폴더 밖에 위치하고 있음
+			  따라서, 브라우저에서 URL로 직접 접근이 가능함!
+		 -->
+		 <form action="/mvc/member/insert" method="post" class="form-control mt-5">
+		 	<!--  
+	 			* 이름, 이메일, 나이를 입력받아
+	 			  요청 주소(/mvc/member/insert)로 전송
+	 			  요청 방식(post)	 	
+		 	-->
+		 	<div class="row p-3">
+			 	<label class="col-sm-2 col-form-label" for="name">이름: </label>
+			 	<input type="text" id="name" name="name" class="col-sm-10" required>
+		 	</div>
+		 	
+		 	<div class="row p-3">
+			 	<label class="col-sm-2 col-form-label" for="email">이메일: </label>
+			 	<input type="email" id="email" name="email" class="col-sm-10" required>
+		 	</div>
+		 	
+		 	<div class="row p-3">
+			 	<label class="col-sm-2 col-form-label" for="age">나이: </label>
+			 	<input type="number" id="age" name="age" class="col-sm-10" required>
+		 	</div> 
+		 	
+		 	<div class="row p-3">
+		 		<input type="submit" value="등록" class="btn btn-primary" />
+		 		<a href="/mvc/member/list" class="btn btn-danger mt-2">목록 보기</a>
+		 	</div>
+		 </form>
+		 
+	</div>	 
 </body>
 </html>
 
